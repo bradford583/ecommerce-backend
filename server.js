@@ -15,7 +15,9 @@ const PORT = process.env.PORT || 3001;
 const connection = mysql.createConnection({
   host: 'localhost',
   user: process.env.NAME,
-  database: process.env.HOST
+  password: process.env.PW,
+  database: process.env.HOST,
+  dialect: 'mysql'
 })
 
 app.use(express.json());
