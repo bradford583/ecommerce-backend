@@ -13,13 +13,15 @@ const seedAll = async () => {
 
   await seedProducts();
   console.log('\n----- PRODUCTS SEEDED -----\n');
-
+  
   await seedTags();
   console.log('\n----- TAGS SEEDED -----\n');
-
+  try{
   await seedProductTags();
-  console.log('\n----- PRODUCT TAGS SEEDED -----\n');
-
+  console.log('\n----- PRODUCT TAGS SEEDED -----\n')}
+    catch (err) {
+      console.log(err);
+    }
   process.exit(0);
 };
 
